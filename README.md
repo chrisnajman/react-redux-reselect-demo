@@ -16,7 +16,7 @@ Normally, it would be used to ensure that the reducer would not fire if there we
 
 In this example, nothing can change - I'm just returning the original `state` (of `userjob`). 
 
-The purpose of this demo is just to work out how, using `reselect`, props can be passed via `user.selectors.js` to `/components/user-job.component.js`.
+The purpose of this demo is to show the mechanics of how, using `reselect`, props can be passed via `user.selectors.js` to `/components/user-job.component.js`.
 
 ## Redux Flow
 
