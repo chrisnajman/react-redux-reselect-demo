@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     userjob: 'Psychotherapist; works for the circus, counselling acrobats and clowns.'
 }
 
-const usernameReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
 
     switch(action.type) {
         case UserActionTypes.SET_USERNAME:
@@ -28,4 +28,4 @@ const usernameReducer = (state = INITIAL_STATE, action) => {
 
 }
 
-export default usernameReducer
+export default userReducer
