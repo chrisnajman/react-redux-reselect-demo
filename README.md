@@ -18,6 +18,8 @@ In this example, nothing can change - I'm just returning the original `state` (o
 
 The purpose of this demo is just to work out how, using `reselect`, props can be passed via `user.selectors.js` to `/components/user-job.component.js`.
 
+## Redux Flow
+
 ![React/Redux Demo Diagram](https://chris-najman.co.uk/react-redux-demo-diagram/redux-demo-diagram.png)
 
 ## Note
