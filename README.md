@@ -10,7 +10,7 @@ to give an example of using a selector with `reselect`
 
 `npm install`
 
-# Reselect
+## Reselect
 This allows us to use a selector inside `mapStateToProps`.
 Normally, it would be used to ensure that the reducer would not fire if there were no changes.
 
