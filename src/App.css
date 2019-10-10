@@ -1,0 +1,39 @@
+.app {
+  padding:20px 20px 100px 20px;
+  max-width:1040px;
+  margin: 0 auto;
+}
+
+.app-wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom:2.5rem;
+    padding: 2rem;
+    border: 1px solid #efefef;
+    box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+span {
+  display: inline-block;
+  padding-right: 10px;
+  margin-bottom:5px;
+  font-weight: 600;
+}
+
+.diagram { margin:0 auto 40px; }
+
+button {
+    align-self: flex-start;
+    margin-bottom:20px;
+}
