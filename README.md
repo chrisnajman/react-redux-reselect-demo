@@ -10,9 +10,15 @@ to give an example of using a selector with `reselect`
 
 `npm install`
 
-## Reselect
-This allows us to use a selector inside `mapStateToProps`.
-Normally, it would be used to ensure that the reducer would not fire if there were no changes.
+## Memoization with 'reselect'
+
+Memoization caches a value. If the value doesn't change, the cached value is returned.
+
+In React terms it means that the component will not re-render unless the value has changed.
+
+I'm using a selector inside `mapStateToProps`.
+Normally, it would be used to ensure that the component would not re-render unless there
+were changes.
 
 In this example, nothing can change - I'm just returning the original `state` (of `userjob`). 
 
