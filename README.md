@@ -25,7 +25,7 @@ mapStateToProps: gets props passed from root-reducers.js > store.js (via connect
 ##### Simple version (no selectors)
 Note:
 - username: and userage: keys are ARBITRARY names - they could be anything.
--- These keys are then used as props within this (App.js) document.
+-- These keys are then used as props within App.js.
 - currentUser comes from root-reducer.js 
 - .username and .userage come from INITIAL_STATE of username.reducer.js
 
