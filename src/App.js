@@ -106,8 +106,8 @@ const mapStateToProps = createStructuredSelector ({
 // mapDispatchToProps: Send changed props via username.actions.js to username.reducer.js > root-reducers.js > store.js (via connect)
 /*
   Note:
-  - setUserName: and setUserAge: are imported from username.actions.js
-  - as are updatedUserName and updatedUserAge - they are the values of the payload key from their respective actions.
+  - setUserName  setUserAge are the names of the actions imported from username.actions.js
+  - updatedUserName and updatedUserAge - are the 'payload' values of those actions.
 
 */
 const mapDispatchToProps = dispatch => ({
