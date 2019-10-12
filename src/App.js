@@ -107,7 +107,8 @@ const mapStateToProps = createStructuredSelector ({
 /*
   Note:
   - setUserName: and setUserAge: are imported from username.actions.js
-  - In this particular case, updatedUserName and updatedUserAge values are ARBITRARY names - they could be anything.
+  - as are updatedUserName and updatedUserAge - they are the values of the payload key from their respective actions.
+
   -- However, if an array was being passed down as a prop from another component, we'd
      put the name of that prop in the place where updatedUserName/Age is being used.
 */
