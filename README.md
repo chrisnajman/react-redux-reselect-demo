@@ -1,6 +1,6 @@
 # React/Redux/Reselect Demo
 
-Very simple demo to clarify and demonstrate the function of each file (store.js, root-reducer.js, etc, etc.) , show the mechanics of implementing selectors with `reselect`, and simplifying those selectors with `createStructuredSelector`.
+Very simple demo to clarify and demonstrate the function of each file (store.js, root-reducer.js, etc, etc.) , show the mechanics of implementing selectors with `reselect`, then simplifying those selectors with `createStructuredSelector`.
 
 ## Setup
 `git clone git@github.com:chrisnajman/react-redux-demo.git`
