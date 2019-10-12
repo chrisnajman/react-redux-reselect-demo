@@ -1,6 +1,6 @@
 # React/Redux/Reselect Demo
 
-Very simple demo to clarify and demonstrate the function of each file (store.js, root-reducer.js, etc, etc.) , using selectors with `reselect`, and simplifying the selectors with `createStructuredSelector`.
+Very simple demo to clarify and demonstrate the function of each file (store.js, root-reducer.js, etc, etc.) , show the mechanics of implementing selectors with `reselect`, and simplifying those selectors with `createStructuredSelector`.
 
 ## Setup
 `git clone git@github.com:chrisnajman/react-redux-demo.git`
@@ -11,17 +11,10 @@ Very simple demo to clarify and demonstrate the function of each file (store.js,
 
 ## Memoization with 'reselect'
 
-Memoization caches a value. If the value doesn't change, the cached value is returned.
+Memoization caches a value. If the value doesn't change, only the cached value is returned.
 
-In React terms it means that the component will not re-render unless the value has changed.
+In React terms this means that the component will not re-render unless the value has changed.
 
-I'm using a selector inside `mapStateToProps`.
-Normally, it would be used to ensure that the component would not re-render unless there
-were changes.
-
-In this example, nothing can change - I'm just returning the original `state` (of `userjob`). 
-
-The purpose of this demo is solely to show the mechanics of how, using `reselect`, props can be passed via `user.selectors.js` to `/components/user-job.component.js`.
 
 ### createStructuredSelector
 Importing this allows us to tidy up the selectors used in `mapStateToProps`, by omitting `state`.
