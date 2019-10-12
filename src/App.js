@@ -4,9 +4,9 @@ import diagram from './assets/redux-demo-diagram.png'
 
 // Redux
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { selectUserNameStateOnly, selectUserAgeStateOnly, selectUserJobStateOnly } from './redux/user/user.selectors'
 import { setUserName, setUserAge} from './redux/user/user.actions'
-
-import UserJob from './components/user-job.component'
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
     this.props.setUserName(event.target.value)
   }
   setUserAge = () => {
-    this.props.setUserAge(this.props.userage + 1)
+    this.props.setUserAge(this.props.userAge + 1)
   }
   render() {
     return (
@@ -26,13 +26,13 @@ class App extends Component {
 
           <div>
             <span>Default Userage:</span> 
-            {this.props.userage}
+            {this.props.userAge}
           </div> 
           <button onClick={this.setUserAge}>Increment user age by 1</button>
           
           <div>
             <span>Default Username:</span> 
-            {this.props.username}
+            {this.props.userName}
           </div>
 
           <label htmlFor="changeUserName">
@@ -43,8 +43,10 @@ class App extends Component {
               id="changeUserName"
             />
           </label>
-          <UserJob />
-          <h2>React / Redux Flow</h2>
+          <div className="user-job">
+            <p><span>User Job Description:</span> {this.props.jobDescription}</p>
+          </div>
+          <h2>Reminder: React / Redux Flow</h2>
           <img className="diagram" src={diagram} alt="Diagram" />
 
         </div>  
@@ -63,16 +65,43 @@ class App extends Component {
 */
 // const mapStateToProps = state => ({
 //   username: state.currentUser.username,
-//   userage: state.currentUser.userage
+//   userage: state.currentUser.userage,
+//   userjob: state.currentUser.userjob
 // })
 
 /**
  * DESTRUCTURED version of code above:
  */
-const mapStateToProps = ({ currentUser: {username, userage}}) => ({
-  username,
-  userage
+// const mapStateToProps = ({ currentUser: {username, userage, userjob}}) => ({
+//   username,
+//   userage,
+//   userjob
+// })
+
+
+/**
+ * SELECTORS version of code above:
+ * (import { selectUserNameStateOnly, selectUserAgeStateOnly, selectUserJobStateOnly } from './redux/user/user.selectors')
+ */
+// const mapStateToProps = state => ({
+//   userName: selectUserNameStateOnly(state),
+//   userAge: selectUserAgeStateOnly(state),
+//   jobDescription: selectUserJobStateOnly(state)
+// })
+
+
+
+/**
+ * createStructuredSelector version of code above:
+ * import { createStructuredSelector } from 'reselect'
+ */
+const mapStateToProps = createStructuredSelector ({
+  userName: selectUserNameStateOnly,
+  userAge: selectUserAgeStateOnly,
+  jobDescription: selectUserJobStateOnly
 })
+
+
 
 // mapDispatchToProps: Send changed props via username.actions.js to username.reducer.js > root-reducers.js > store.js (via connect)
 /*

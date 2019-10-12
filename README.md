@@ -24,7 +24,57 @@ In this example, nothing can change - I'm just returning the original `state` (o
 
 The purpose of this demo is solely to show the mechanics of how, using `reselect`, props can be passed via `user.selectors.js` to `/components/user-job.component.js`.
 
-## Redux Flow
+### createStructuredSelector
+Importing this allows us to tidy up the selectors used in `mapStateToProps`, by omitting `state`.
+
+#### Code
+mapStateToProps: gets props passed from root-reducers.js > store.js (via connect)
+
+##### Simple version (no selectors)
+Note:
+- username: and userage: keys are ARBITRARY names - they could be anything.
+-- These keys are then used as props within this (App.js) document.
+- currentUser comes from root-reducer.js 
+- .username and .userage come from INITIAL_STATE of username.reducer.js
+
+```
+const mapStateToProps = state => ({
+    username: state.currentUser.username,
+    userage: state.currentUser.userage,
+    userjob: state.currentUser.userjob
+})
+```
+
+##### Destructured version (no selectors)
+```
+const mapStateToProps = ({ currentUser: {username, userage, userjob}}) => ({
+    username,
+    userage,
+    userjob
+})
+```
+
+##### Selectors version
+(import { selectUserNameStateOnly, selectUserAgeStateOnly, selectUserJobStateOnly } from './redux/user/user.selectors')
+```
+const mapStateToProps = state => ({
+    userName: selectUserNameStateOnly(state),
+    userAge: selectUserAgeStateOnly(state),
+    jobDescription: selectUserJobStateOnly(state)
+})
+```
+
+##### createStructuredSelectors version
+(import { createStructuredSelector } from 'reselect')
+```
+const mapStateToProps = createStructuredSelector ({
+  userName: selectUserNameStateOnly,
+  userAge: selectUserAgeStateOnly,
+  jobDescription: selectUserJobStateOnly
+})
+```
+
+## Reminder: React / Redux Flow
 
 ![React/Redux Demo Diagram](https://chris-najman.co.uk/react-redux-demo-diagram/redux-demo-diagram.png)
 
